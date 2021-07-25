@@ -1,4 +1,4 @@
-import React, { useMemo,useState, useEffect } from 'react'
+import React from 'react'
 import './App.css'
 import PairCollection from './components/PairCollection'
 import './components/pair.css'

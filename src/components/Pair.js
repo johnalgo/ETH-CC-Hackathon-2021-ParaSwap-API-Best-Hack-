@@ -3,7 +3,7 @@ import './pair.css'
 const para =require( './para.js')
 
 
-export default function Pair({ loading, req }) {
+export default function Pair({ req }) {
 
   // req:{fromTkn, toTkn, amt, chain}
   // Use the useTable Hook to send the columns and data to build the table
@@ -17,26 +17,20 @@ export default function Pair({ loading, req }) {
   const numFormat = new Intl.NumberFormat('en-US', { maximumFractionDigits: 4 })
 
 
-  async function getBidAsk() {
-    if (!loading) {
+
+  useEffect(() => {
+    async function getBidAsk() {
       setResData(resData => {return {...resData, chain:'fetching ...'}})
       try {      
         let res = await para.getBidAsk(req.fromTkn, req.toTkn, req.amt, req.chain)
-        setResData(res)
+        setResData(resData => res)
       } catch(e) {console.log(e)}
     }
-  }
-  useEffect(() => {
-    if (!loading) {
-      getBidAsk()
-    }
-  }, [loading]);
-
-  useEffect(() => {
+  
     getBidAsk()
     let interval = setInterval(()=> setRefresh(refresh => refresh + 1), 30000)
     return () => clearInterval(interval)
-  },[refresh])
+  },[refresh,req.fromTkn, req.toTkn, req.amt, req.chain])
 
   return (
     <div >

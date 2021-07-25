@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import './pair.css'
+import Pair from './Pair.js'
+
 const para = require( './para.js')
-const Pair = require('./Pair.js')
 
 export default function PairCollection() {
 
   const defTkn = {address:'', decimals: 0, symbol: '', tokenType: '', mainConnector: '', connectors: [ ], network: 0, img: '', allowance: 0, balance: 0 }  
 
   const[reqData, setReqData] = useState([])
-  const [loading, setLoading] = useState(true)
   const [newReq, setNewReq] = useState({fromTkn:defTkn, toTkn:defTkn, amt:0, chain:'ethereum'})
 
   useEffect(() => { 
     (async () => {
-      setLoading(true)
       await para.initPara()
-      setReqData([{fromTkn:para.findTkn('USDT','ethereum'), toTkn:para.findTkn('ETH','ethereum'), amt:'1000' ,chain:'ethereum'}])
-      setLoading(false)
+      //setReqData([{fromTkn:para.findTkn('USDT','ethereum'), toTkn:para.findTkn('ETH','ethereum'), amt:'1000' ,chain:'ethereum'}])
     })();
   }, []);
 
@@ -103,8 +101,8 @@ export default function PairCollection() {
         <div className="pair-price"> Sell Savings </div>
       </div>
       <div>
-    {reqData.map(item =>
-      <Pair key={item.fromTkn.symbol+item.toTkn.symbol+item.amt.toString()+item.chain} loading={loading} req={item} />
+    {reqData.map(item => 
+      <Pair key={item.fromTkn.symbol+item.toTkn.symbol+item.amt.toString()+item.chain} req={item} />
     )}
     </div>    
     </div>

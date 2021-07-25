@@ -78,11 +78,6 @@ async function getBidAsk(fromTkn, toTkn, amt, chain) {
     return {fromTkn, toTkn, amt, bid, ask, spread, defSpread, buySave, sellSave, defRoute:defExch.get(chain), chain }
 }
 
-async function test() {
-    await initPara()
-    await getBidAsk(findTkn('USDC', 'polygon'), findTkn('ETH', 'polygon'), 1, 'polygon')
-}
-
 module.exports.findTkn = findTkn
 module.exports.initPara = initPara
 module.exports.getRate = getRate
