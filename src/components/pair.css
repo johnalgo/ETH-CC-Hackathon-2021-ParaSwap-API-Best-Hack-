@@ -1,0 +1,101 @@
+.pair-container-route {
+  font-family: sans-serif;
+  overflow: auto;
+  margin: 1rem;
+  border: 2px solid steelblue;
+  border-radius: 10px;
+  margin: 0.3rem;
+  display:flex;
+}
+
+.pair-container-header {
+    font-family: sans-serif;
+    overflow: auto;
+    margin: 1rem;
+    border: 2px solid black;
+    margin: 0.3rem;
+    display:flex;
+  }
+
+  .pair-container-default {
+    font-family: sans-serif;
+    overflow: auto;
+    margin: 1rem;
+    margin: 0.3rem;
+    display:flex;
+  }
+
+  .pair-collection-add {
+    font-family: sans-serif;
+    overflow: auto;
+    margin: 1rem;
+    border-radius: 10px;
+    margin: 0.3rem;
+    display:flex;
+  }
+
+.pair-default {
+    width: 28%;
+}
+  
+.pair-tkn {
+  width: 6%;
+}
+
+.pair-logo {
+    width: 3%;
+}
+
+.pair-amt {
+    width: 10%;
+}
+
+.pair-price {
+    width: 9%;
+}
+
+.pair-route {
+    width: 14%;
+}
+
+.pair-bps {
+    width: 8%;
+}
+
+
+.pair-coll-add-button {
+  font: inherit;
+  padding: 0.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  color: steelblue;
+  margin: 0.1rem;
+}
+
+.dodo-btn--alt {
+  background-color: transparent;
+  color: #800040;
+}
+
+.baseTknRow {
+  display: flex;
+  align-items: center;
+  margin: 0.3rem;
+}
+
+.baseTknRow1 {
+  width: 20%;
+}
+
+.baseTknRow2 {
+  width: 45%;
+}
+
+.baseTknRow3 {
+  width: 10%;
+}
+
+.baseTknRow4 {
+  width: 25%;
+  font-size: 0.8rem;
+}
