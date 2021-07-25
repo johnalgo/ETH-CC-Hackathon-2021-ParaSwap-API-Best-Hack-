@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './pair.css'
-import Pair from './Pair.js'
-
-const para = require( './para.js')
+import Pair from './Pair'
+import * as para from './para.js'
 
 export default function PairCollection() {
 

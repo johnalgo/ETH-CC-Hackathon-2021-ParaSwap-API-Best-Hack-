@@ -78,8 +78,4 @@ async function getBidAsk(fromTkn, toTkn, amt, chain) {
     return {fromTkn, toTkn, amt, bid, ask, spread, defSpread, buySave, sellSave, defRoute:defExch.get(chain), chain }
 }
 
-module.exports.findTkn = findTkn
-module.exports.initPara = initPara
-module.exports.getRate = getRate
-module.exports.getBidAsk = getBidAsk
-module.exports.isInitiailized = isInitiailized
+export {findTkn, initPara, getRate, getBidAsk, isInitiailized}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './pair.css'
-const para =require( './para.js')
+import * as para from './para.js'
 
 
 export default function Pair({ req }) {
